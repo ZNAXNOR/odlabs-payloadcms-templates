@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.html",
+    "./src/**/*.css",
+    "./src/**/*.scss",
+    "./src/**/*.json"
+  ],
+  "exclude": [
+    "./dev",
+    "./dist",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}

@@ -1,0 +1,100 @@
+import type { Post } from '@/payload-types'
+import type { Metadata } from 'next'
+
+import { RelatedPosts } from '@/blocks/RelatedPosts/Component'
+import { LivePreviewListener } from '@/components/LivePreviewListener'
+import RichText from '@/components/RichText'
+import { PostHero } from '@/heros/PostHero'
+import { generateMeta } from '@/utilities/generateMeta'
+import configPromise from '@payload-config'
+import { draftMode } from 'next/headers'
+import { notFound } from 'next/navigation'
+import { getPayload } from 'payload'
+import React, { cache } from 'react'
+
+import PageClient from './page.client'
+
+export async function generateStaticParams() {
+  const payload = await getPayload({ config: configPromise })
+  const posts = await payload.find({
+    collection: 'posts',
+    draft: false,
+    limit: 1000,
+    overrideAccess: false,
+    pagination: false,
+    select: {
+      slug: true,
+    },
+  })
+
+  return posts.docs.map(({ slug }) => ({ slug }))
+}
+
+type Args = {
+  params: Promise<{
+    slug?: string
+  }>
+}
+
+export default async function Post({ params: paramsPromise }: Args) {
+  const { isEnabled: draft } = await draftMode()
+  const { slug = '' } = await paramsPromise
+  const decodedSlug = decodeURIComponent(slug)
+  const post = await queryPostBySlug({ slug: decodedSlug })
+
+  if (!post) {
+    notFound()
+  }
+
+  return (
+    <article className="pt-16 pb-16">
+      <PageClient />
+
+      {draft ? <LivePreviewListener /> : null}
+
+      <PostHero post={post} />
+
+      <div className="flex flex-col items-center gap-4 pt-8">
+        <div className="container">
+          <RichText className="max-w-3xl mx-auto" data={post.content} enableGutter={false} />
+          {post.relatedPosts && post.relatedPosts.length > 0 ? (
+            <RelatedPosts
+              className="mt-12 max-w-208 lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
+              docs={post.relatedPosts.filter((relatedPost) => typeof relatedPost === 'object')}
+            />
+          ) : null}
+        </div>
+      </div>
+    </article>
+  )
+}
+
+
+export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+  const { slug = '' } = await paramsPromise
+  const decodedSlug = decodeURIComponent(slug)
+  const post = await queryPostBySlug({ slug: decodedSlug })
+
+  return generateMeta({ doc: post })
+}
+
+const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
+  const { isEnabled: draft } = await draftMode()
+
+  const payload = await getPayload({ config: configPromise })
+
+  const result = await payload.find({
+    collection: 'posts',
+    draft,
+    limit: 1,
+    overrideAccess: draft,
+    pagination: false,
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+  })
+
+  return result.docs?.[0] || null
+})

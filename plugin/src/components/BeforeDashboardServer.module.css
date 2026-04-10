@@ -1,0 +1,126 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.48), rgba(17, 17, 17, 0.3)),
+    linear-gradient(135deg, rgba(233, 66, 53, 0.18), rgba(255, 255, 255, 0));
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.cardDescription {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.metaLabel {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.metaValue {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.linkButton,
+.actionButton {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.linkButton {
+  background: #ffffff;
+  color: #111111;
+}
+
+.actionButton {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.linkButton:hover,
+.actionButton:hover {
+  transform: translateY(-1px);
+}
+
+:global(html[data-theme='light']) .card {
+  border-color: rgba(17, 17, 17, 0.08);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(249, 247, 245, 0.96)),
+    linear-gradient(135deg, rgba(233, 66, 53, 0.08), rgba(255, 255, 255, 0));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+}
+
+:global(html[data-theme='light']) .eyebrow,
+:global(html[data-theme='light']) .cardDescription,
+:global(html[data-theme='light']) .metaLabel {
+  color: rgba(17, 17, 17, 0.7);
+}
+
+:global(html[data-theme='light']) .cardTitle,
+:global(html[data-theme='light']) .metaValue {
+  color: #111111;
+}
+
+:global(html[data-theme='light']) .linkButton {
+  background: #111111;
+  color: #ffffff;
+}
+
+:global(html[data-theme='light']) .actionButton {
+  background: rgba(17, 17, 17, 0.08);
+  color: #111111;
+}

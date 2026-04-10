@@ -1,0 +1,13 @@
+import * as SelectPrimitive from '@radix-ui/react-select';
+import * as React from 'react';
+declare const Select: React.FC<React.ComponentProps<typeof SelectPrimitive.Root>>;
+declare const SelectGroup: React.FC<React.ComponentProps<typeof SelectPrimitive.Group>>;
+declare const SelectValue: React.FC<React.ComponentProps<typeof SelectPrimitive.Value>>;
+declare const SelectTrigger: React.FC<React.ComponentProps<typeof SelectPrimitive.Trigger>>;
+declare const SelectContent: React.FC<React.ComponentProps<typeof SelectPrimitive.Content>>;
+declare const SelectLabel: React.FC<React.ComponentProps<typeof SelectPrimitive.Label>>;
+declare const SelectItem: React.FC<React.ComponentProps<typeof SelectPrimitive.Item>>;
+declare const SelectSeparator: React.FC<React.ComponentProps<typeof SelectPrimitive.Separator>>;
+declare const SelectScrollUpButton: React.FC<React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>>;
+declare const SelectScrollDownButton: React.FC<React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>>;
+export { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue, };
