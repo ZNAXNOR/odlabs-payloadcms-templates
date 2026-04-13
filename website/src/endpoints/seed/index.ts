@@ -83,22 +83,25 @@ export const seed = async ({
 
   payload.logger.info(`— Seeding media...`)
 
-  const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer] = await Promise.all([
+  const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer, homeImage1Buffer] = await Promise.all([
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp',
+      'https://raw.githubusercontent.com/ZNAXNOR/odlabs-payloadcms-templates/refs/heads/main/website/src/endpoints/media/image-post1.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post2.webp',
+      'https://raw.githubusercontent.com/ZNAXNOR/odlabs-payloadcms-templates/refs/heads/main/website/src/endpoints/media/image-post2.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post3.webp',
+      'https://raw.githubusercontent.com/ZNAXNOR/odlabs-payloadcms-templates/refs/heads/main/website/src/endpoints/media/image-post3.webp',
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
+      'https://raw.githubusercontent.com/ZNAXNOR/odlabs-payloadcms-templates/refs/heads/main/website/src/endpoints/media/Hero.webp',
+    ),
+    fetchFileByURL(
+      'https://raw.githubusercontent.com/ZNAXNOR/odlabs-payloadcms-templates/refs/heads/main/website/src/endpoints/media/Homepage_Media.webp',
     ),
   ])
 
-  const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc] = await Promise.all([
+  const [demoAuthor, image1Doc, image2Doc, image3Doc, imageHomeDoc, homepageMediaDoc] = await Promise.all([
     payload.create({
       collection: 'users',
       data: {
@@ -126,6 +129,11 @@ export const seed = async ({
       collection: 'media',
       data: imageHero1,
       file: hero1Buffer,
+    }),
+    payload.create({
+      collection: 'media',
+      data: imageHero1,
+      file: homeImage1Buffer,
     }),
     categories.map((category) =>
       payload.create({
@@ -206,7 +214,7 @@ export const seed = async ({
     payload.create({
       collection: 'pages',
       depth: 0,
-      data: home({ heroImage: imageHomeDoc, metaImage: image2Doc }),
+      data: home({ heroImage: imageHomeDoc, metaImage: homepageMediaDoc }),
     }),
     payload.create({
       collection: 'pages',
@@ -258,7 +266,7 @@ export const seed = async ({
               type: 'custom',
               label: 'Source Code',
               newTab: true,
-              url: 'https://github.com/ZNAXNOR/OD-LABS-Payload/tree/whitelabel',
+              url: 'https://github.com/ZNAXNOR/odlabs-payloadcms-templates/tree/main/website',
             },
           },
           {

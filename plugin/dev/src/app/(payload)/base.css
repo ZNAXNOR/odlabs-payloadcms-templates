@@ -1,0 +1,29 @@
+@custom-variant dark (&:is(.dark *, [data-theme='dark'] *));
+
+:root {
+  --background: var(--theme-elevation-0);
+  --foreground: var(--theme-text);
+
+  --card: var(--theme-elevation-100);
+  --card-foreground: var(--theme-text);
+
+  --popover: var(--theme-elevation-100);
+  --popover-foreground: var(--theme-text);
+
+  --primary: var(--theme-accent-500);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--theme-elevation-200);
+  --secondary-foreground: var(--theme-text);
+
+  --muted: var(--theme-elevation-50);
+  --muted-foreground: var(--text-secondary);
+
+  --accent: var(--theme-accent-500);
+  --accent-foreground: #ffffff;
+
+  --border: var(--theme-elevation-200);
+  --input: var(--theme-elevation-200);
+
+  --ring: var(--theme-accent-400);
+}

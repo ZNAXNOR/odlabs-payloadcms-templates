@@ -1,0 +1,35 @@
+/* =========================================
+   DESIGN TOKENS
+   ========================================= */
+
+:root {
+  /* Core palette */
+  --color-bg-light: #f7f5f5;
+  --color-bg-dark: #131111;
+
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #221f1f;
+
+  /* Neutral scale */
+  --color-neutral-100: #f3f2f2;
+  --color-neutral-200: #e6e5e5;
+  --color-neutral-300: #d6cccc;
+  --color-neutral-400: #b4b1b1;
+  --color-neutral-500: #827d7d;
+  --color-neutral-600: #686464;
+  --color-neutral-700: #4e4b4b;
+  --color-neutral-800: #2a2626;
+  --color-neutral-900: #1a1919;
+  --color-neutral-1000: #0d0c0c;
+
+  /* Brand */
+  --color-primary-400: #eb5247;
+  --color-primary-500: #e94135;
+  --color-primary-600: #e62719;
+  --color-primary-700: #b81f14;
+
+  /* Borders */
+  --color-border-soft: #d8d1d1;
+  --color-border-medium: #c8bebe;
+  --color-border-strong: #a79c9c;
+}

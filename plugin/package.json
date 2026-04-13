@@ -1,5 +1,5 @@
 {
-  "name": "@od-labs/payload-plugin-template",
+  "name": "@od-labs/payload-plugin-name",
   "version": "1.0.0",
   "description": "OD LABS white-labeled Payload plugin template with a branded website dev app, SQLite defaults, and optional sample content.",
   "license": "MIT",
@@ -15,12 +15,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/your-plugin.git"
+    "url": "https://github.com/ZNAXNOR/payload-plugin-repo.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/your-plugin/issues"
+    "url": "https://github.com/ZNAXNOR/payload-plugin-repo/issues"
   },
-  "homepage": "https://github.com/your-org/your-plugin#readme",
+  "homepage": "https://github.com/ZNAXNOR/payload-plugin-repo#readme",
   "exports": {
     ".": {
       "import": "./src/index.ts",

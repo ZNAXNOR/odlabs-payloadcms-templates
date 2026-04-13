@@ -109,7 +109,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   fields: {
                     linkType: 'custom',
                     newTab: true,
-                    url: 'https://github.com/ZNAXNOR/OD-LABS-Payload/tree/whitelabel',
+                    url: 'https://github.com/ZNAXNOR/odlabs-payloadcms-templates/tree/main/website',
                   },
                   format: '',
                   indent: 0,

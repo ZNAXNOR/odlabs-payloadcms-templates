@@ -205,13 +205,13 @@ export const seedSampleContent = async ({ payload, req }: SeedArgs): Promise<voi
     }),
     getOrCreateMedia({
       data: image4,
-      fileName: 'Admin_Dashboard.png',
+      fileName: 'Admin_Dashboard.webp',
       payload,
       req,
     }),
     getOrCreateMedia({
       data: image5,
-      fileName: 'Seed_Panel.png',
+      fileName: 'Seed_Panel.webp',
       payload,
       req,
     }),
