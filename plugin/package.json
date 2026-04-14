@@ -1,10 +1,7 @@
 {
   "name": "@od-labs/payload-plugin-name",
   "version": "1.0.0",
-  "description": "OD LABS white-labeled Payload plugin template with a branded website dev app, SQLite defaults, and optional sample content.",
-  "license": "MIT",
-  "author": "OD LABS",
-  "type": "module",
+  "description": "OD LABS Payload plugin description.",
   "keywords": [
     "payload",
     "payloadcms",
@@ -13,14 +10,28 @@
     "nextjs",
     "odlabs"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ZNAXNOR/payload-plugin-repo.git"
-  },
+  "homepage": "https://github.com/ZNAXNOR/payload-plugin-repo#readme",
   "bugs": {
     "url": "https://github.com/ZNAXNOR/payload-plugin-repo/issues"
   },
-  "homepage": "https://github.com/ZNAXNOR/payload-plugin-repo#readme",
+  "license": "MIT",
+  "author": "OD LABS <send@notifications.odtechlab.com>",
+  "contributors": [
+    {
+      "name": "Omkar Dalvi",
+      "email": "omkar@odtechlab.com",
+      "url": "https://omkar.odtechlab.com"
+    }
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/ZNAXNOR"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZNAXNOR/payload-plugin-repo.git"
+  },
   "exports": {
     ".": {
       "import": "./src/index.ts",
